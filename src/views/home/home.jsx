@@ -1,7 +1,6 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 
-// import './home.less';
+import './home.less'
 
 export default class Home extends React.Component {
 
