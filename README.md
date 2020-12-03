@@ -51,10 +51,38 @@ npm config set registry https://registry.npm.taobao.org
         },
         ///////////////////////////////////////////////////////配置信息 - end
     
-    存在问题：
-    less样式没有隔离成组件作用域，造成全局样式污染  ===> 待解决
+    存在问题:
+    less样式没有隔离成组件作用域，造成全局样式污染  ===> 待解决 [即: home/login组件中同时定义clas为container的样式, 相同页面下, 后者会覆盖前者]
+    简单说: CSS 文件分离 != CSS 作用域隔离
+    src\app.jsx:
+        <>
+        <Home />
+        <Login />
+        </>
+    
+    src\views\home\home.less:
+    .container {
+        border: 1px solid red;
+    }
 
+    src\views\login\login.less:
+    .container {
+        color: blue;
+        border: 1px solid blue;
+    }
+    
+    界面上会显示: 蓝色文字与边框
 
+    经验证: purchase-landing-widget组件使用treat书写less, 也存在这个问题.
+    临时解决方案: 通过手动添加前缀方式, 避免重名[尤其是组件最外层容器,内部容器可通过less样式嵌套写法,似乎并不能避免污染,已经测试], 如: 改成:homeContainer/loginContainer
+    最终解决方案: 
+    参考: https://blog.csdn.net/william_n/article/details/109470962
+    https://juejin.cn/post/6844904021304541198
+
+    总结: 解决 React的CSS作用域污染方案
+    方案一：namespaces
+    方案二：CSS in JS
+    方案三：CSS Modules
 
 
 Note：
