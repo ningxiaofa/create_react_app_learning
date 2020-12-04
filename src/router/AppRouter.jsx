@@ -6,9 +6,6 @@ import Login from "../views/login/login";
 import NotFound from "../views/not-found/notFound";
 
 export default class AppRouter extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     render(){
         return (
