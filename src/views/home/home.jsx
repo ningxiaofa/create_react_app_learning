@@ -1,6 +1,7 @@
 import React from 'react';
 
-import './home.less'
+// import styles from './home.less'  // 这种写法, 是less文件中有export, 对应于render中 className={styles.homeContainer} 暂时不确定
+import './home.less';
 
 import FootNav from '../../components/foot-nav/foot-nav'
 
