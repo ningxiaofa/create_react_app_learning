@@ -4,6 +4,7 @@ import React from 'react';
 // import Login from './views/login/login';
 import AppRouter from './router/AppRouter';
 
+import './static/css/common.less'
 export default class App extends React.Component {
 
     render(){

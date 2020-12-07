@@ -84,6 +84,15 @@ npm config set registry https://registry.npm.taobao.org
     方案二：CSS in JS
     方案三：CSS Modules
 
+    2.配置路由/以及路由跳转
+    https://www.bilibili.com/video/BV1fV411d7Ka?p=88
+    存在问题: 没有解决NavLink样式高亮问题.
+    
+
+
+    3.redux/react-redux实践 ==> TBD
+    https://www.bilibili.com/video/BV1fV411d7Ka?p=95
+
 
 Note：
 优化：
